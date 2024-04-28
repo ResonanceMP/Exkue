@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elixir</title>
+    <link rel="icon" href="https://cdn.itztiva.com/elixirlogo.png">
+</head>
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(https://cdn.itztiva.com/websitebackground.png) center/cover no-repeat;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 500px;
+            text-align: center;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.815);
+            padding: 85px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        }
+
+
+        .auth-box {
+            background-color: rgb(31, 31, 31);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #fff; 
+    }
+
+    p {
+        color: #fff; 
+    }
+    a {
+        color: #0099ff; 
+    }
+</style>
+<body>
+    <div class="container">
+        <img src="https://cdn.itztiva.com/elixirlogo.png" alt="Logo" style="width: 100px; height: 100px;">
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <div class="auth-box">
+            <h1>Error</h1>
+            <p><%= error %></p>
+            <p><br></p>
+            <p>If this is incorrect, please contact support in the guild below.</p>
+            <p><br></p> 
+            <a href="https://discord.gg/Elixirfn">discord.gg/Elixirfn</a>
+        </div>
+    </div>
+</body>
+</html>

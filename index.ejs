@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elixir</title>
+    <link rel="icon" href="https://cdn.itztiva.com/elixirlogo.png">
+    <meta content="Elixir | Register Website" property="og:title" />
+    <meta content="Create an account for discord.gg/elixir using this website!" property="og:description" />
+    <meta content="#9837F9" data-react-helmet="true" name="theme-color" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            background: url(https://cdn.itztiva.com/websitebackground.png) center/cover no-repeat;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            overflow: hidden;
+            position: relative; 
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 500px;
+            text-align: center;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.815); 
+            padding: 85px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #fff; 
+            font-size: 24px;
+        }
+
+        .container a {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px 0; 
+            border-radius: 10px;
+            color: #fff;
+            background: #5865f2;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .container a:hover {
+            background: #7289da;
+        }
+
+        img.logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        img.discord-logo {
+            height: 23px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .auth-box {
+            position: relative;
+            background-color: rgb(31, 31, 31);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://cdn.itztiva.com/elixirlogo.png" alt="Logo">
+        <h1>Welcome to Elixir! </h1>
+        <br><br><br><br>
+        <br>
+        <div class="auth-box">
+            <h1>Login With Discord</h1>
+            <br>
+            <a href="<%= authorizeUrl %>">Login to <strong>Elixir</strong></a>
+        </div>
+    </div>
+    </div>
+
+   <!-- <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const numCircles = 5;
+
+    for (let i = 0; i < numCircles; i++) {
+        const circle = createCircle();
+        document.body.appendChild(circle);
+    }
+
+    function createCircle() {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+
+        const containerWidth = window.innerWidth;
+        const containerHeight = window.innerHeight;
+
+        let x, y;
+        do {     
+            x = getRandomInt(0, containerWidth);
+            y = getRandomInt(0, containerHeight);
+        } while (checkOverlap(x, y));
+
+        circle.style.setProperty('--random-x', `${x}px`);
+        circle.style.setProperty('--random-y', `${y}px`);
+        circle.style.animationDuration = `${getRandomInt(10, 20)}s`;
+        return circle;
+    }
+
+
+
+            function checkOverlap(x, y) {
+                const circles = document.querySelectorAll('.circle');
+                for (let circle of circles) {
+                    const rect = circle.getBoundingClientRect();
+                    if (Math.sqrt((x - (rect.left + rect.width / 4)) ** 4 + (y - (rect.top + rect.height / 2)) ** 2) < 80) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 4)) + min;
+            }
+        });
+    </script> -->
+</body>
+</html>

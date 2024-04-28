@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elixir</title>
+    <link rel="icon" href="https://cdn.itztiva.com/elixirlogo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(https://cdn.itztiva.com/websitebackground.png) center/cover no-repeat;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 500px;
+            text-align: center;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.815);
+            padding: 85px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff; 
+        }
+
+        p {
+            color: #fff; 
+            font-size: 15px;
+            text-align: left; 
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #fff; 
+            font-size: 15px;
+            margin-top: 5px;
+            text-align: left; 
+            margin-bottom: 10px;
+            display: block; 
+        }
+
+        .auth-box {
+            position: relative;
+            background-color: rgb(31, 31, 31);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            flex-wrap: wrap; 
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 300px;
+            background-color: #1784DF; 
+            color: #FFFFFF;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #7289DA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #df1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="<%= profilePictureUrl %>" alt="Profile Picture" style="width: 50px; height: 50px;">
+            <h1>Welcome <%= username %></h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="auth-box">
+            <div>
+                <p>Your Account Information:</p>
+                <p>Email: <%= email %></p>
+                <p>Username: <%= username %></p>
+                <p>Discord ID: <%= discordId %></p>
+            </div>
+        </div>
+   <!--    <form action="/elixir/change-email" method="POST">
+            <label for="newEmail">New Email:</label>
+            <input type="email" id="newEmail" name="newEmail" placeholder="Enter your new email" required>
+            <input type="hidden" id="discordId" name="discordId" value="<%= discordId %>">
+            <button type="submit">Change Email</button>
+        </form>-->
+        
+        
+
+        <!-- <p>Discord ID: <%= discordId %></p> -->
+
+        <!-- <form action="/profile" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= email %>" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="<%= username %>" required>
+            <input type="hidden" id="discordId" name="discordId" value="<%= discordId %>">
+            <button type="submit">Update Profile</button>
+        </form> -->
+        <form id="deleteForm" action="/elixir/delete-account" method="POST">
+            <input type="hidden" id="discordId" name="discordId" value="<%= discordId %>">
+            <button id="deleteButton" type="button">Delete Account</button>
+        </form>
+        
+        <script>
+            document.getElementById("deleteButton").addEventListener("click", function() {
+                if (confirm("Are you sure you want to delete your account?")) {
+                    document.getElementById("deleteForm").submit();
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
